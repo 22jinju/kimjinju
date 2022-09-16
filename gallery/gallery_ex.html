@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="wrap">
+
+        <div class="box_img">
+            <p><img src="/slideImg/0.jpg" alt=""></p>
+            <p><img src="/slideImg/1.jpg" alt=""></p>
+            <p><img src="/slideImg/2.jpg" alt=""></p>
+            <p><img src="/slideImg/3.jpg" alt=""></p>
+            <p><img src="/slideImg/4.jpg" alt=""></p>
+            <p><img src="/slideImg/5.jpg" alt=""></p>
+            <p><img src="/slideImg/6.jpg" alt=""></p>
+            <p><img src="/slideImg/7.jpg" alt=""></p>
+            <p><img src="/slideImg/8.jpg" alt=""></p>
+            <p><img src="/slideImg/9.jpg" alt=""></p>
+            <p><img src="/slideImg/10.jpg" alt=""></p>
+            <p><img src="/slideImg/11.jpg" alt=""></p>
+            <p><img src="/slideImg/12.jpg" alt=""></p>
+            <p><img src="/slideImg/13.jpg" alt=""></p>
+            <p><img src="/slideImg/14.jpg" alt=""></p>
+            <p><img src="/slideImg/15.jpg" alt=""></p>
+            <p><img src="/slideImg/16.jpg" alt=""></p>
+            <p><img src="/slideImg/17.jpg" alt=""></p>
+            <p><img src="/slideImg/18.jpg" alt=""></p>
+            <p><img src="/slideImg/19.jpg" alt=""></p>
+        </div>
+
+
+
+
+
+        <div class="thumbnail">
+            <div class="left">
+                <img src="/slideImg/btn_left.gif" alt="">
+            </div>
+            <div class="container">
+                <ul>
+                    <li><img src="/slideImg/thumb0.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb1.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb2.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb3.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb4.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb5.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb6.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb7.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb8.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb9.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb10.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb11.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb12.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb13.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb14.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb15.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb16.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb17.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb18.jpg" alt=""></li>
+                    <li><img src="/slideImg/thumb19.jpg" alt=""></li>
+                </ul>
+                <div class="popUp">
+                    마지막 사진입니다.
+                </div>
+
+            </div>
+            <div class="right">
+                <img src="/slideImg/btn_right.gif" alt="" srcset="">
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            vertical-align: bottom;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+
+
+
+        .wrap {
+            width: 800px;
+            height: 560px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 150px;
+        }
+
+        .box_img {
+            width: 760px;
+            height: 470px;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 10px;
+        }
+
+        .thumbnail {
+            width: 800px;
+            height: 75px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+
+        /* 박스 이미지를 한곳에 모음 */
+
+        .box_img>p {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+
+        .box_img>p:nth-child(1) {
+            display: block;
+        }
+
+
+
+        /* 컨테이너 이미지를 가로정렬 */
+
+        .container {
+            width: 760px;
+            height: 75px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container ul {
+            display: flex;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2440px;
+            transition: all 0.5s;
+        }
+
+        .popUp {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.6);
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 4;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 10px;
+            display: none;
+        }
+
+        .container li {
+            margin-right: 4px;
+        }
+
+
+        /* 좌우 버튼 설정 */
+
+        .left {
+            margin-right: 10px;
+        }
+
+        .right {
+            margin-left: 10px;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <script>
+        /*
+$(document).ready(function(){
+
+    //실행문
+    // container안에 li를 클릭했을때, 각 순번을 찾아라.
+
+    $('.container li').click(function(){
+        let i =$(this).index();
+        console.log(i)
+
+        // box_img안에 있는 p의 모든 이미지를 안보이게 해라.
+        $('.box_img p').stop().fadeOut()
+        // 내가 누른 p의 순번을 찾아서, 이미지를 보이게 해라.
+        $('.box_img p').eq(i).stop().fadeIn('slow')
+    })
+
+})
+*/
+
+
+
+        $(document).ready(function () {
+
+            $('.container li').click(function () {
+                let i = $(this).index();
+                console.log(i)
+
+                // $('.box_img p').stop().hide();
+                // $('.box_img p').eq(i).stop().show();
+
+
+                // $('.box_img p').stop().slideUp();
+                // $('.box_img p').eq(i).stop().slideDown();
+
+
+                $('.box_img p').css({'display':'none'})
+                $('.box_img p').eq(i).css({'display':'block'})
+
+            });
+
+
+        })
+
+
+
+
+
+// left 버튼을 클릭했을때, 일정 값 만큼씩 ul이 움직여라.
+
+let tt=0
+
+$('.left').click(function(){
+    if(tt<14)tt++
+    console.log(tt)
+
+    $('.container ul').css({'left':-124*tt+'px'})
+
+    if(tt==14){
+        $('.popUp').slideDown()
+    }
+    if(tt<13){
+        $('.popUp').slideUp()
+    }
+
+})
+
+// right 버튼을 클릭했을때, 일정 값만큼 ul이 움직여라.
+
+$('.right').click(function(){
+    if(tt>0)tt--;
+    console.log(tt)
+
+    $('.container ul').css({'left':-124*tt+'px'})
+
+        $('.popUp').slideUp()
+
+})
+
+
+
+// left버튼을 2초마다 클릭하는 트리거를 실행해라.
+// 트리거가 실행되면, .box_img p 이미지를 보여라
+
+
+setInterval(function(){
+
+    if(tt==14)tt=0;
+$('.left').trigger('click')
+
+$('.box_img p').css({'display':'none'})
+$('.box_img p').eq(tt).css({'display':'block'})
+
+},2000)
+
+
+
+
+
+/*
+// container의 li를 클릭했을때 box_img p가 바뀌어라
+
+$('container li').click(function(){
+
+    let i = $(this).index();
+    $('.box_img p').hide()
+    $('.box_img p').eq(i).show()
+
+})
+
+
+// 0~5까지 자동으로 로테이션하게 만들어라.
+
+let te=0
+setInterval(function(){
+
+    if(te<5) te++;
+    console.log(te);
+    if(te==5)te=-1
+
+    //클릭없이 자동으로 화면 보는값이 변경되는 형태
+    // $('.box_img p').hide()
+    // $('.box_img p').eq(te).show()
+
+    $('container li').eq(te).trigger('click')
+
+
+},2000)
+
+*/
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

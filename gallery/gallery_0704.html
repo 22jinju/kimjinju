@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자동생성 자바스크립트</title>
+
+    <!-- 제이쿼리 CDN -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+
+    <h1>자동생성 자바스크립트</h1>
+    <div>
+        1. 엘리먼트 하나로 프로그램을 돌리는 방법<br>
+        2. 이미 설정된 프로그램을 click을 자동으로 하는 방법
+    </div>
+
+    <div class="wrap">
+
+        <div>
+            <ul>
+                <li>list1</li>
+                <li>list2</li>
+                <li>list3</li>
+                <li>list4</li>
+                <li>list5</li>
+            </ul>
+        </div>
+        <button class="left">
+            < </button> <button class="right"> >
+        </button>
+
+    </div>
+
+
+
+
+
+
+    <style>
+        .wrap {
+            background-color: aliceblue;
+            width: 800px;
+            height: 300px;
+        }
+
+        .wrap div {
+            position: relative;
+            width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .wrap ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            position: absolute;
+            left: 0%;
+            top: 50px;
+        }
+
+        .wrap li {
+            width: 120px;
+            height: 200px;
+            margin-right: 5px;
+            background-color: blueviolet;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+
+
+        $(document).ready(function () {
+
+            //실행문
+            //left를 클릭했을때 ul이 125px 씩 왼쪽으로 부드럽게 이동한다.
+
+let i =0;
+
+            $('.left').click(function(){
+
+            if(i<5)i++;
+            let tt=-125*i
+            if(i==5)i=0;
+
+                $('.wrap ul').stop().animate({'left':tt},1500)
+            })
+
+
+
+
+            $('.right').click(function(){
+                if(i>0)i--;
+                let tt=-125*i
+
+            $('.wrap ul').stop().animate({'left':tt},1500)
+
+
+})
+
+
+//자동설정하기 (일정시간동안 반복해라)
+
+let ti =0;
+setInterval(function(){
+
+    // if(ti<5)ti++;
+    // console.log(ti)
+    // if(ti==5)ti=0;
+
+    // $('.wrap ul').stop().animate({'left':-125*ti},1500)
+
+    // 일정시간에 한번씩 방아쇠를 당겨라
+    // trigger - 방아쇠를 당기다.
+
+    $('.left').trigger('click')
+
+
+
+
+},2000)
+
+
+
+
+
+
+        })
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
